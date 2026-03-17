@@ -77,45 +77,41 @@
     </div>
 
     <!-- Segunda fila de acciones (Configuración) -->
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <a href="{{ route('settings.index') }}" class="bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg shadow p-6 flex items-center justify-between transition transform hover:scale-105">
-            <div>
-                <h4 class="font-bold text-lg flex items-center">
-                    <i class="fas fa-cog me-2"></i>Configuración
-                </h4>
-                <p class="text-orange-100">Ajustes del parqueadero</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="{{ route('settings.index') }}" class="bg-orange-500 hover:bg-orange-600 text-white rounded-lg shadow-md p-5 flex flex-col items-start justify-between transition transform hover:scale-105 duration-200">
+            <div class="flex items-center gap-3 mb-2">
+                <i class="fas fa-cog text-2xl"></i>
+                <h4 class="font-bold text-base">Configuración</h4>
             </div>
-            <i class="fas fa-arrow-right text-2xl"></i>
+            <p class="text-sm text-orange-100 mb-3">Ajustes del sistema</p>
+            <i class="fas fa-arrow-right text-lg self-end"></i>
         </a>
 
-        <a href="{{ route('parqueos.index') }}" class="bg-gradient-to-br from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700 text-white rounded-lg shadow p-6 flex items-center justify-between transition transform hover:scale-105">
-            <div>
-                <h4 class="font-bold text-lg flex items-center">
-                    <i class="fas fa-list me-2"></i>Parqueos
-                </h4>
-                <p class="text-indigo-100">Historial de registros</p>
+        <a href="{{ route('parqueos.index') }}" class="bg-indigo-500 hover:bg-indigo-600 text-white rounded-lg shadow-md p-5 flex flex-col items-start justify-between transition transform hover:scale-105 duration-200">
+            <div class="flex items-center gap-3 mb-2">
+                <i class="fas fa-history text-2xl"></i>
+                <h4 class="font-bold text-base">Parqueos</h4>
             </div>
-            <i class="fas fa-arrow-right text-2xl"></i>
+            <p class="text-sm text-indigo-100 mb-3">Historial completo</p>
+            <i class="fas fa-arrow-right text-lg self-end"></i>
         </a>
 
-        <a href="{{ route('motos.index') }}" class="bg-gradient-to-br from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white rounded-lg shadow p-6 flex items-center justify-between transition transform hover:scale-105">
-            <div>
-                <h4 class="font-bold text-lg flex items-center">
-                    <i class="fas fa-list me-2"></i>Motocicletas
-                </h4>
-                <p class="text-cyan-100">Gestión de motos</p>
+        <a href="{{ route('motos.index') }}" class="bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg shadow-md p-5 flex flex-col items-start justify-between transition transform hover:scale-105 duration-200">
+            <div class="flex items-center gap-3 mb-2">
+                <i class="fas fa-motorcycle text-2xl"></i>
+                <h4 class="font-bold text-base">Motocicletas</h4>
             </div>
-            <i class="fas fa-arrow-right text-2xl"></i>
+            <p class="text-sm text-cyan-100 mb-3">Gestión de motos</p>
+            <i class="fas fa-arrow-right text-lg self-end"></i>
         </a>
 
-        <a href="{{ route('planes.index') }}" class="bg-gradient-to-br from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white rounded-lg shadow p-6 flex items-center justify-between transition transform hover:scale-105">
-            <div>
-                <h4 class="font-bold text-lg flex items-center">
-                    <i class="fas fa-list me-2"></i>Planes
-                </h4>
-                <p class="text-rose-100">Planes de pago</p>
+        <a href="{{ route('planes.index') }}" class="bg-rose-500 hover:bg-rose-600 text-white rounded-lg shadow-md p-5 flex flex-col items-start justify-between transition transform hover:scale-105 duration-200">
+            <div class="flex items-center gap-3 mb-2">
+                <i class="fas fa-tags text-2xl"></i>
+                <h4 class="font-bold text-base">Planes</h4>
             </div>
-            <i class="fas fa-arrow-right text-2xl"></i>
+            <p class="text-sm text-rose-100 mb-3">Planes de pago</p>
+            <i class="fas fa-arrow-right text-lg self-end"></i>
         </a>
     </div>
 </div>
