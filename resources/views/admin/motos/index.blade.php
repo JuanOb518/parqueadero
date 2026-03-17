@@ -9,7 +9,7 @@
         <h3 class="text-lg font-bold text-gray-800">Buscar Motocicleta</h3>
     </div>
     <form method="GET" action="{{ route('motos.buscar') }}" class="flex space-x-2">
-        <input type="text" name="placa" placeholder="Ingresa la placa" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+        <input type="text" name="placa" placeholder="Ingresa la placa (ABC 12A)" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 uppercase" maxlength="8" oninput="formatPlaca(this)" required>
         <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition">
             <i class="fas fa-search"></i>
         </button>
@@ -81,3 +81,23 @@
     @endif
 </div>
 @endsection
+
+<script>
+function formatPlaca(input) {
+    let value = input.value.toUpperCase().replace(/\s/g, '');
+    let formatted = '';
+    
+    // Formato: ABC 12A (3 letras, espacio, 2 números, espacio, 1 letra)
+    if (value.length >= 1) {
+        formatted = value.substring(0, 3); // ABC
+    }
+    if (value.length >= 4) {
+        formatted += ' ' + value.substring(3, 5); // ABC 12
+    }
+    if (value.length >= 6) {
+        formatted += ' ' + value.substring(5, 6); // ABC 12A
+    }
+    
+    input.value = formatted.substring(0, 8);
+}
+</script>

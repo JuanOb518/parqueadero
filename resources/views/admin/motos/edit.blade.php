@@ -11,8 +11,11 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-                <label for="placa" class="block text-sm font-medium text-gray-700 mb-2">Placa*</label>
-                <input type="text" id="placa" name="placa" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 uppercase @error('placa') border-red-500 @enderror" value="{{ old('placa', $moto->placa) }}" required>
+                <label for="placa" class="block text-sm font-medium text-gray-700 mb-2">
+                    Placa* <span class="text-gray-500 text-xs">(Formato: ABC 12A)</span>
+                </label>
+                <input type="text" id="placa" name="placa" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 uppercase @error('placa') border-red-500 @enderror" value="{{ old('placa', $moto->placa) }}" maxlength="8" required oninput="formatPlaca(this)">
+                <p class="text-gray-500 text-xs mt-1">3 letras, espacio, 2 números, espacio, 1 letra</p>
                 @error('placa')<p class="text-red-600 text-sm mt-1">{{ $message }}</p>@enderror
             </div>
 
@@ -73,4 +76,32 @@
         </div>
     </form>
 </div>
+
+<script>
+function formatPlaca(input) {
+    let value = input.value.toUpperCase().replace(/\s/g, '');
+    let formatted = '';
+    
+    // Formato: ABC 12A (3 letras, espacio, 2 números, espacio, 1 letra)
+    if (value.length >= 1) {
+        formatted = value.substring(0, 3); // ABC
+    }
+    if (value.length >= 4) {
+        formatted += ' ' + value.substring(3, 5); // ABC 12
+    }
+    if (value.length >= 6) {
+        formatted += ' ' + value.substring(5, 6); // ABC 12A
+    }
+    
+    input.value = formatted.substring(0, 8);
+}
+
+// Validar que solo permitimos letras y números
+document.getElementById('placa').addEventListener('keypress', function(e) {
+    const char = String.fromCharCode(e.which);
+    if (!/[A-Z0-9]/.test(char)) {
+        e.preventDefault();
+    }
+});
+</script>
 @endsection

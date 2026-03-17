@@ -31,13 +31,16 @@ class MotorcycleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'placa' => 'required|string|unique:motorcycles',
+            'placa' => 'required|string|unique:motorcycles|regex:/^[A-Z]{3}\s\d{2}\s[A-Z]$/',
             'nombre_propietario' => 'required|string|max:255',
             'telefono' => 'required|string|max:20',
             'correo' => 'required|email',
             'marca' => 'required|string|max:255',
             'color' => 'required|string|max:255',
             'foto' => 'nullable|image|max:2048',
+        ], [
+            'placa.regex' => 'La placa debe tener el formato: ABC 12A (3 letras, espacio, 2 números, espacio, 1 letra)',
+            'placa.unique' => 'Esta placa ya está registrada en el sistema',
         ]);
 
         $data = $request->all();
@@ -66,13 +69,16 @@ class MotorcycleController extends Controller
     public function update(Request $request, Motorcycle $moto)
     {
         $request->validate([
-            'placa' => 'required|string|unique:motorcycles,placa,' . $moto->id,
+            'placa' => 'required|string|unique:motorcycles,placa,' . $moto->id . '|regex:/^[A-Z]{3}\s\d{2}\s[A-Z]$/',
             'nombre_propietario' => 'required|string|max:255',
             'telefono' => 'required|string|max:20',
             'correo' => 'required|email',
             'marca' => 'required|string|max:255',
             'color' => 'required|string|max:255',
             'foto' => 'nullable|image|max:2048',
+        ], [
+            'placa.regex' => 'La placa debe tener el formato: ABC 12A (3 letras, espacio, 2 números, espacio, 1 letra)',
+            'placa.unique' => 'Esta placa ya está registrada en el sistema',
         ]);
 
         $data = $request->all();
