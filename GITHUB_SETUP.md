@@ -8,7 +8,7 @@ El proyecto **Parqueadero** ya está configurado como repositorio Git local y li
 
 1. Abre https://github.com/new
 2. Completa los datos:
-   - **Repository name**: `parqueadero-motorcycles`
+   - **Repository name**: `parqueadero`
    - **Description**: Motorcycle Parking Management System with Laravel 10
    - **Visibility**: Public (para compartir) o Private (solo tú)
    - **NO** inicialices con README, .gitignore o LICENSE
@@ -24,7 +24,7 @@ cd e:\parqueadero
 
 git branch -M main
 
-git remote add origin https://github.com/TU_USUARIO/parqueadero-motorcycles.git
+git remote add origin https://github.com/TU_USUARIO/parqueadero.git
 
 git push -u origin main
 ```
@@ -54,7 +54,7 @@ type $env:USERPROFILE\.ssh\id_ed25519.pub
 # Pega la clave completa
 
 # Cambiar URL a SSH
-git remote set-url origin git@github.com:TU_USUARIO/parqueadero-motorcycles.git
+git remote set-url origin git@github.com:TU_USUARIO/parqueadero.git
 ```
 
 ## 📤 Subir cambios
@@ -67,14 +67,14 @@ git push
 
 Una vez en GitHub, comparte el enlace:
 ```
-https://github.com/TU_USUARIO/parqueadero-motorcycles
+https://github.com/TU_USUARIO/parqueadero
 ```
 
 Para que otros clonen el proyecto:
 
 ```powershell
-git clone https://github.com/TU_USUARIO/parqueadero-motorcycles.git
-cd parqueadero-motorcycles
+git clone https://github.com/TU_USUARIO/parqueadero.git
+cd parqueadero
 
 # Instalar dependencias
 composer install
