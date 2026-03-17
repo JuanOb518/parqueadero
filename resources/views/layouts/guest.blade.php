@@ -7,6 +7,10 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%232563eb'/><path d='M25 55 L35 40 L40 45 L50 35 L60 45 L65 40 L75 55 M30 60 Q30 70 40 70 Q50 70 50 60 M60 70 Q50 70 50 60' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+        <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><circle cx='90' cy='90' r='88' fill='%232563eb'/><path d='M45 100 L63 72 L72 81 L90 63 L108 81 L117 72 L135 100 M54 108 Q54 126 72 126 Q90 126 90 108 M108 126 Q90 126 90 108' stroke='white' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
