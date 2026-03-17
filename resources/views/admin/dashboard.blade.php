@@ -48,30 +48,76 @@
 </div>
 
 <!-- Acciones rápidas -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-    <a href="{{ route('parqueos.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow p-6 flex items-center justify-between transition">
-        <div>
-            <h4 class="font-bold text-lg">Registrar Entrada</h4>
-            <p class="text-blue-100">Nuevo ingreso</p>
-        </div>
-        <i class="fas fa-arrow-right text-2xl"></i>
-    </a>
+<div class="space-y-6 mb-8">
+    <!-- Primera fila de acciones -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="{{ route('parqueos.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow p-6 flex items-center justify-between transition">
+            <div>
+                <h4 class="font-bold text-lg">Registrar Entrada</h4>
+                <p class="text-blue-100">Nuevo ingreso</p>
+            </div>
+            <i class="fas fa-arrow-right text-2xl"></i>
+        </a>
 
-    <a href="{{ route('motos.create') }}" class="bg-green-600 hover:bg-green-700 text-white rounded-lg shadow p-6 flex items-center justify-between transition">
-        <div>
-            <h4 class="font-bold text-lg">Registrar Moto</h4>
-            <p class="text-green-100">Nueva motocicleta</p>
-        </div>
-        <i class="fas fa-arrow-right text-2xl"></i>
-    </a>
+        <a href="{{ route('motos.create') }}" class="bg-green-600 hover:bg-green-700 text-white rounded-lg shadow p-6 flex items-center justify-between transition">
+            <div>
+                <h4 class="font-bold text-lg">Registrar Moto</h4>
+                <p class="text-green-100">Nueva motocicleta</p>
+            </div>
+            <i class="fas fa-arrow-right text-2xl"></i>
+        </a>
 
-    <a href="{{ route('planes.create') }}" class="bg-purple-600 hover:bg-purple-700 text-white rounded-lg shadow p-6 flex items-center justify-between transition">
-        <div>
-            <h4 class="font-bold text-lg">Crear Plan</h4>
-            <p class="text-purple-100">Nuevo plan de pago</p>
-        </div>
-        <i class="fas fa-arrow-right text-2xl"></i>
-    </a>
+        <a href="{{ route('planes.create') }}" class="bg-purple-600 hover:bg-purple-700 text-white rounded-lg shadow p-6 flex items-center justify-between transition">
+            <div>
+                <h4 class="font-bold text-lg">Crear Plan</h4>
+                <p class="text-purple-100">Nuevo plan de pago</p>
+            </div>
+            <i class="fas fa-arrow-right text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Segunda fila de acciones (Configuración) -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <a href="{{ route('settings.index') }}" class="bg-gradient-to-br from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-lg shadow p-6 flex items-center justify-between transition transform hover:scale-105">
+            <div>
+                <h4 class="font-bold text-lg flex items-center">
+                    <i class="fas fa-cog me-2"></i>Configuración
+                </h4>
+                <p class="text-orange-100">Ajustes del parqueadero</p>
+            </div>
+            <i class="fas fa-arrow-right text-2xl"></i>
+        </a>
+
+        <a href="{{ route('parqueos.index') }}" class="bg-gradient-to-br from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700 text-white rounded-lg shadow p-6 flex items-center justify-between transition transform hover:scale-105">
+            <div>
+                <h4 class="font-bold text-lg flex items-center">
+                    <i class="fas fa-list me-2"></i>Parqueos
+                </h4>
+                <p class="text-indigo-100">Historial de registros</p>
+            </div>
+            <i class="fas fa-arrow-right text-2xl"></i>
+        </a>
+
+        <a href="{{ route('motos.index') }}" class="bg-gradient-to-br from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white rounded-lg shadow p-6 flex items-center justify-between transition transform hover:scale-105">
+            <div>
+                <h4 class="font-bold text-lg flex items-center">
+                    <i class="fas fa-list me-2"></i>Motocicletas
+                </h4>
+                <p class="text-cyan-100">Gestión de motos</p>
+            </div>
+            <i class="fas fa-arrow-right text-2xl"></i>
+        </a>
+
+        <a href="{{ route('planes.index') }}" class="bg-gradient-to-br from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white rounded-lg shadow p-6 flex items-center justify-between transition transform hover:scale-105">
+            <div>
+                <h4 class="font-bold text-lg flex items-center">
+                    <i class="fas fa-list me-2"></i>Planes
+                </h4>
+                <p class="text-rose-100">Planes de pago</p>
+            </div>
+            <i class="fas fa-arrow-right text-2xl"></i>
+        </a>
+    </div>
 </div>
 
 <!-- Motocicletas parqueadas -->
